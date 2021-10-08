@@ -12,7 +12,7 @@ public class Board
           if(piece.checkMove(c,r)==true)
           {
             fill(#A1DE98);
-            rect(c*75+75, r*75+75, 75, 75);
+            rect(c*75+75, r*75+150, 75, 75);
             if(positions[c][r]!= null)
             {
               positions[c][r].displayImage(positions[c][r].getImage());
@@ -40,7 +40,7 @@ public class Board
             fill(237, 199, 141);
           }
         }
-        rect(c*75+75, r*75+75, 75, 75);
+        rect(c*75+75, r*75+150, 75, 75);
       }
     }
   }
@@ -87,6 +87,7 @@ public class Board
     //calls setPosition and displayImage for every spot in positions[][] that is not null
     for (int x = 0; x < 8; x++)
     {
+
       for (int y = 0; y < 8; y++)
       {
         if (positions[x][y] != null)      

@@ -16,9 +16,9 @@ public class Pawn extends Piece
   {
     if(hasMoved == false)
     {
-      if(player == Player.W)
+      if(player == Player.W && white)
       {
-        if(((x == this.xpos-1 || x == this.xpos+1)&& y == this.ypos+1)&& positions[x][y]!= null)
+        if(((x == this.xpos-1 || x == this.xpos+1)&& y == this.ypos+1)&& positions[x][y]!= null && positions[x][y].player == Player.B)
           {
             return true;
           }
@@ -32,26 +32,26 @@ public class Pawn extends Piece
         }
 
       }
-      else
+      else if(player == Player.B && !white)
       {
-        if(((x == this.xpos-1 || x == this.xpos+1)&& y == this.ypos-1)&& positions[x][y]!= null)
+        if(((x == this.xpos-1 || x == this.xpos+1)&& y == this.ypos-1)&& positions[x][y]!=null && positions[x][y].player == Player.W)
           {
             return true;
           }
         if(x == this.xpos && (y-this.ypos >= -2 && y-this.ypos<0))
         {
-          if(positions[x][y+1] == null && y-this.ypos == -2)
+          if(positions[x][y+1] == null && y-this.ypos == -2 && positions[x][y] == null)
             return true;
-          if(positions[x][y+1] != null && y-this.ypos == -1)
+          if(positions[x][y+1] != null && y-this.ypos == -1 && positions[x][y] == null)
             return true;
         }
       }
     }
     else
     {
-      if(player == Player.W)
+      if(player == Player.W && white)
       {
-        if(((x == this.xpos-1 || x == this.xpos+1)&& y == this.ypos+1)&& positions[x][y]!= null)
+        if(((x == this.xpos-1 || x == this.xpos+1)&& y == this.ypos+1)&& positions[x][y]!= null && positions[x][y].player == Player.B)
         {
           return true;
         }
@@ -61,9 +61,9 @@ public class Pawn extends Piece
         }
         
       }
-      else
+      else if(player == Player.B && !white)
       {
-        if(((x == this.xpos-1 || x == this.xpos+1)&& y == this.ypos-1)&& positions[x][y]!= null)
+        if(((x == this.xpos-1 || x == this.xpos+1)&& y == this.ypos-1)&& positions[x][y]!= null && positions[x][y].player == Player.W)
         {
           return true;
         }

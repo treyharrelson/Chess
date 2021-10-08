@@ -14,7 +14,7 @@ public class Bishop extends Piece
   @Override
   public boolean checkMove(int x, int y)
   {
-    if(player == Player.W)
+    if(player == Player.W && white)
       {
         if(positions[x][y]==null || positions[x][y].player == Player.B)
         {
@@ -63,7 +63,7 @@ public class Bishop extends Piece
           }
         }
       }
-      else //black
+      else if(player == Player.B && !white)
       {
         if(positions[x][y]==null || positions[x][y].player == Player.W)
         {

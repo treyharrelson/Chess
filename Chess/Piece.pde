@@ -18,7 +18,7 @@ public class Piece
   public void setPosition(double mouseX, double mouseY)
   {
     xpos = (int)mouseX/75-1;
-    ypos = (int)mouseY/75-1;
+    ypos = (int)mouseY/75-2;
   }
   PImage getImage()
   {
@@ -31,6 +31,6 @@ public class Piece
   }
   public void displayImage(PImage image)
   {
-    image(image, xpos*75+75, ypos*75+75);
+    image(image, xpos*75+75, ypos*75+150);
   }
 }
